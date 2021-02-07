@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <style>
+          @font-face {
+	      font-family: 'Menlo Regular';
+	      font-style: normal;
+	      font-weight: normal;
+	      src: local('Menlo Regular'), url('Menlo-Regular.woff') format('woff');
+	  }
+	  body {
+	      font-family:'Menlo Regular';
+	      font-weight:normal;
+	      background: #afe0bf;
+	  }
+	  img {
+	      border-width: 0px 1px 1px 0px;
+	      border-style: solid;
+	      border-color: red;
+	      margin: 0px -1px -1px 0px;
+	  }
+    </style>
+    <script src="luxon.min.js"></script>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+$(document).ready(function(){
+      var DateTime = luxon.DateTime;
+      var events = [
+	  ["Cybernetic Orchestra (Hamilton, Ontario)", "2021-02-19T17:00Z", "2021-02-19T18:00Z"],
+	  ["TOPLAP Düsseldorf", "2021-02-19T18:00Z", "2021-02-19T21:00Z"],
+	  ["IMWI Karlsruhe", "2021-02-19T21:00Z", "2021-02-20T00:00Z"],
+	  ["La Salpicodera - TOPLAP Bogotá", "2021-02-20T00:00Z", "2021-02-20T03:00Z"],
+	  ["TOPLAPMX (Ciudad de México)", "2021-02-20T03:00Z", "2021-02-20T07:00Z"],
+	  ["TOPLAP Belgium", "2021-02-20T13:00Z", "2021-02-20T15:00Z"],
+	  ["TOPLAP Barcelona", "2021-02-20T15:00Z", "2021-02-20T19:00Z"],
+	  ["TOPLAP Italia", "2021-02-20T19:00Z", "2021-02-20T22:00Z"],
+	  ["NL_CL (Netherlands Coding Live)", "2021-02-22T17:00Z", "2021-02-21T01:00Z"],
+	  ["New England", "2021-02-21T02:00Z", "2021-02-21T05:00Z"],
+	  ["London UK", "2021-02-21T12:00Z", "2021-02-21T17:00Z"],
+	  ["TOPLAP Sheffield", "2021-02-21T17:00Z", "2021-02-21T20:00Z"],
+	  ["Algorave Brasil", "2021-02-21T20:00Z", "2021-02-21T22:30Z"],
+	  ["Algorave CLIC (colectivo de live coders)/Argentina", "2021-02-21T23:00Z", "2021-02-22T01:30Z"],
+	  ["Livecoding CR", "2021-02-22T01:40Z", "2021-02-22T03:40Z"],
+      ];
+    var lineup = "";
+    var last_date = "";
+    for (event of events) {
+	var start = DateTime.fromISO(event[1]);
+	var stop = DateTime.fromISO(event[2]);
+	var start_date = start.toLocaleString(DateTime.DATE_HUGE);
+	if (start_date != last_date) {
+	    lineup += "<h3>" + start_date + "</h3>";
+	    last_date = start_date;
+	};
+	lineup += "<p>" + start.toLocaleString(DateTime.TIME_SIMPLE) + " - " + stop.toLocaleString(DateTime.TIME_WITH_SHORT_OFFSET) + "<br/>" + event[0] + "</p>"
+    }
+    $("#lineup").html(lineup);
+});
+    </script>
+  </head>
+  <body>
+    <div id="lineup" style="width: 414px; float: right;" /></div><img src="X.svg" /><img src="T.svg" /><img src="R.svg" /><img src="A.svg" /><img src="N.svg" /><img src="S.svg" /><img src="X.svg" /><img src="space.svg" /><img src="space.svg" /><img src="X.svg" /><img src="N.svg" /><img src="O.svg" /><img src="D.svg" /><img src="A.svg" /><img src="L.svg" /><img src="space.svg" /><img src="space.svg" /><img src="space.svg" /><img src="space.svg" /><image src="toplap.svg" /><img src="space.svg" /><img src="T.svg" /><img src="O.svg" /><img src="P.svg" /><img src="L.svg" /><img src="A.svg" /><img src="P.svg" /><img src="X.svg" /><img src="space.svg" /><img src="space.svg" /><img src="X.svg" /><img src="1.svg" /><img src="9.svg" /><img src="-.svg" /><img src="2.svg" /><img src="1.svg" /><img src="space.svg" /><img src="F.svg" /><img src="E.svg" /><img src="B.svg" /><img src="space.svg"><img src="2.svg"><img src="0.svg"><img src="2.svg"><img src="1.svg"><img src="X.svg">
+  </body>
+</html>
