@@ -54,7 +54,7 @@ $(document).ready(function(){
 	    lineup += "<h3>" + start_date + "</h3>";
 	    last_date = start_date;
 	};
-	lineup += "<p>" + start.toLocaleString(DateTime.TIME_SIMPLE) + " - " + stop.toLocaleString(DateTime.TIME_WITH_SHORT_OFFSET) + "<br/>" + event[0] + "</p>"
+	lineup += "<p>" + start.toLocaleString({hour: 'numeric', minute: 'numeric'}) + " - " + stop.toLocaleString({hour: 'numeric', minute: 'numeric', timeZoneName: 'short'}) + "<br/>" + event[0] + "</p>"
     }
     $("#lineup").html(lineup);
 });
