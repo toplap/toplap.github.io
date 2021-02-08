@@ -28,33 +28,33 @@
 $(document).ready(function(){
       var DateTime = luxon.DateTime;
       var events = [
-	  ["Cybernetic Orchestra (Hamilton, Ontario)", "2021-02-19T17:00Z", "2021-02-19T18:00Z"],
-	  ["TOPLAP Düsseldorf", "2021-02-19T19:00Z", "2021-02-19T21:00Z"],
-	  ["IMWI Karlsruhe", "2021-02-19T21:00Z", "2021-02-20T00:00Z"],
-	  ["La Salpicodera - TOPLAP Bogotá", "2021-02-20T00:00Z", "2021-02-20T03:00Z"],
-	  ["TOPLAPMX (Ciudad de México)", "2021-02-20T03:00Z", "2021-02-20T07:00Z"],
-	  ["TOPLAP Belgium", "2021-02-20T13:00Z", "2021-02-20T15:00Z"],
-	  ["TOPLAP Barcelona", "2021-02-20T15:00Z", "2021-02-20T19:00Z"],
-	  ["TOPLAP Italia", "2021-02-20T19:00Z", "2021-02-20T22:00Z"],
-	  ["NL_CL (Netherlands Coding Live)", "2021-02-20T22:00Z", "2021-02-21T01:00Z"],
-	  ["New England", "2021-02-21T02:00Z", "2021-02-21T05:00Z"],
-	  ["London UK", "2021-02-21T12:00Z", "2021-02-21T17:00Z"],
-	  ["TOPLAP Sheffield", "2021-02-21T17:00Z", "2021-02-21T20:00Z"],
-	  ["Algorave Brasil", "2021-02-21T20:00Z", "2021-02-21T22:30Z"],
-	  ["Algorave CLIC (colectivo de live coders)/Argentina", "2021-02-21T23:00Z", "2021-02-22T01:30Z"],
-	  ["Livecoding CR", "2021-02-22T01:40Z", "2021-02-22T03:40Z"],
+	  ["Cybernetic Orchestra (Hamilton, Ontario)", "", "2021-02-19T17:00Z", "2021-02-19T18:00Z"],
+	  ["TOPLAP Düsseldorf", "", "2021-02-19T19:00Z", "2021-02-19T21:00Z"],
+	  ["IMWI Karlsruhe", "", "2021-02-19T21:00Z", "2021-02-20T00:00Z"],
+	  ["La Salpicodera - TOPLAP Bogotá", "", "2021-02-20T00:00Z", "2021-02-20T03:00Z"],
+	  ["TOPLAPMX (Ciudad de México)", "", "2021-02-20T03:00Z", "2021-02-20T07:00Z"],
+	  ["TOPLAP Belgium", "", "2021-02-20T13:00Z", "2021-02-20T15:00Z"],
+	  ["TOPLAP Barcelona", "", "2021-02-20T15:00Z", "2021-02-20T19:00Z"],
+	  ["TOPLAP Italia", "", "2021-02-20T19:00Z", "2021-02-20T22:00Z"],
+	  ["NL_CL (Netherlands Coding Live)", "", "2021-02-20T22:00Z", "2021-02-21T01:00Z"],
+	  ["New England", "", "2021-02-21T02:00Z", "2021-02-21T05:00Z"],
+	  ["London UK", "", "2021-02-21T12:00Z", "2021-02-21T17:00Z"],
+	  ["TOPLAP Sheffield", 'Performances + some chat from Sheffield live coders <a href="https://heavy-lifting.org">Heavy Lifting</a>, <a href="http://annaxambo.me">Anna Xambo</a>, <a href="https://g-roma.github.io">Gerard Roma</a>, <a href="https://slab.org/">Yaxu</a>, <a href="https://www.helenpapaioannou.com">Kar Pouzi</a> and <a href="https://sleepsang.com/">Sleepsang</a>', "2021-02-21T17:00Z", "2021-02-21T20:00Z"],
+	  ["Algorave Brasil", "", "2021-02-21T20:00Z", "2021-02-21T22:30Z"],
+	  ["Algorave CLIC (colectivo de live coders)/Argentina", "", "2021-02-21T23:00Z", "2021-02-22T01:30Z"],
+	  ["Livecoding CR", "", "2021-02-22T01:40Z", "2021-02-22T03:40Z"],
       ];
     var lineup = "<h1>Transnodal livecode stream</h1><div><p>EN: A long weekend of live coding performances + talks + more, for <a href=\"\">TOPLAP</a>'s birthday. Live coding is where people write code while it runs to make live music/visuals/dance/art/etc for their friends.</p><iframe width=\"414\" height=\"233\" src=\"https://www.youtube-nocookie.com/embed/qJhgD529LF0\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></div>";
     var last_date = "";
     for (event of events) {
-	var start = DateTime.fromISO(event[1]);
-	var stop = DateTime.fromISO(event[2]);
+	var start = DateTime.fromISO(event[2]);
+	var stop = DateTime.fromISO(event[3]);
 	var start_date = start.toLocaleString(DateTime.DATE_HUGE);
 	if (start_date != last_date) {
 	    lineup += "<h3>" + start_date + "</h3>";
 	    last_date = start_date;
 	};
-	lineup += "<p>" + start.toLocaleString({hour: 'numeric', minute: 'numeric'}) + " - " + stop.toLocaleString({hour: 'numeric', minute: 'numeric', timeZoneName: 'short'}) + "<br/>" + event[0] + "</p>"
+	lineup += "<p>" + start.toLocaleString({hour: 'numeric', minute: 'numeric'}) + " - " + stop.toLocaleString({hour: 'numeric', minute: 'numeric', timeZoneName: 'short'}) + "<br/><b>" + event[0] + "</b><br />" + event[1] + "</p>"
     }
     $("#lineup").html(lineup);
 });
