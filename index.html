@@ -32,39 +32,91 @@ $(document).ready(function(){
       var DateTime = luxon.DateTime;
       var events = [
 	  ["Cybernetic Orchestra (Hamilton, Ontario)", "", "2021-02-19T17:00Z", "2021-02-19T18:00Z"],
-	  ["TOPLAP Düsseldorf", "", "2021-02-19T19:00Z", "2021-02-19T21:00Z"],
-	  ["IMWI Karlsruhe", "", "2021-02-19T21:00Z", "2021-02-20T00:00Z"],
+	  ["TOPLAP Düsseldorf", "", "2021-02-19T19:00Z", "2021-02-19T21:00Z",
+	   [
+	       ["2021-02-19T20:00+01:00", "Damian T. Dziwis"],
+	       ["2021-02-19T20:20+01:00", "Epilatrix"],
+	       ["2021-02-19T20:40+01:00", "Markus van Well"],
+	       ["2021-02-19T21:00+01:00", "Axel Ganz"],
+	       ["2021-02-19T21:30+01:00", "Raffael Seyfried"]
+	   ]	   
+	  ],
+	  ["IMWI Karlsruhe", "", "2021-02-19T21:00Z", "2021-02-20T00:00Z",
+	   [["2021-02-19T22:00+01:00", "[ _ _ _ ] (Jia Liu, Song Li, Shuoxin Tan)"],
+	    ["2021-02-19T22:20+01:00", "Elina Lukijanova"],
+	    ["2021-02-19T22:40+01:00", "Daniel Kurosch Höpfner"],
+	    ["2021-02-19T23:10+01:00", "Jia Liu"],
+	    ["2021-02-19T23:30+01:00", "Jakob Schreiber"],
+	    ["2021-02-19T23:50+01:00", "Tim Offenhäußer & Anselm Weber"],
+	    ["2021-02-20T00:30+01:00", "Michele Samarotto"]
+	   ]
+	  ],
 	  ["La Salpicodera - TOPLAP Bogotá", "", "2021-02-20T00:00Z", "2021-02-20T03:00Z"],
 	  ["TOPLAPMX (Ciudad de México)", "", "2021-02-20T03:00Z", "2021-02-20T07:00Z"],
 	  ["p-code (Tokyo)", "", "2021-02-20T07:00Z", "2021-02-20T08:00Z"],
 	  ["TOPLAP Belgium", "", "2021-02-20T13:00Z", "2021-02-20T15:00Z"],
-	  ["TOPLAP Barcelona", "", "2021-02-20T15:00Z", "2021-02-20T19:00Z"],
+	  ["TOPLAP Barcelona", "performances + talks streaming from <a href=\"https://hangar.org\">Hangar.org</a>", "2021-02-20T15:00Z", "2021-02-20T19:00Z",
+	   [
+	       ["2021-02-20T16:00+01:00", "Chigüire (talk)"],
+	       ["2021-02-20T16:30+01:00", "Niklas Reppel (talk)"],
+	       ["2021-02-20T17:00+01:00", "Roger Pibernat (talk)"],
+	       ["2021-02-20T17:30+01:00", "Yago Raymond"],
+	       ["2021-02-20T17:45+01:00", "QBRNTHSS"],
+	       ["2021-02-20T18:00+01:00", "Linalab + Turbulente"],
+	       ["2021-02-20T18:15+01:00", "Iván Paz"],
+	       ["2021-02-20T18:30+01:00", "Alicia Champlin"],
+	       ["2021-02-20T18:45+01:00", "Gabriel Millán"],
+	       ["2021-02-20T19:00+01:00", "Alfonsofonso"],
+	       ["2021-02-20T19:15+01:00", "Toni J."],
+	       ["2021-02-20T19:30+01:00", "Eloi el bon noi + !Me"],
+	       ["2021-02-20T19:45+01:00", "TOPLAP Barcelona"]
+	   ]
+	  ],
 	  ["TOPLAP Italia", "", "2021-02-20T19:00Z", "2021-02-20T22:00Z"],
 	  ["NL_CL (Netherlands Coding Live)", "", "2021-02-20T22:00Z", "2021-02-21T01:00Z"],
 	  ["New England", "", "2021-02-21T02:00Z", "2021-02-21T05:00Z"],
 	  ["London UK", "", "2021-02-21T12:00Z", "2021-02-21T17:00Z"],
-	  ["TOPLAP Sheffield", 'Performances + some chat from Sheffield live coders <a href="https://heavy-lifting.org">Heavy Lifting</a>, <a href="http://annaxambo.me">Anna Xambo</a>, <a href="https://g-roma.github.io">Gerard Roma</a>, <a href="https://slab.org/">Yaxu</a>, <a href="https://www.helenpapaioannou.com">Kar Pouzi</a> and <a href="https://sleepsang.com/">Sleepsang</a>', "2021-02-21T17:00Z", "2021-02-21T20:00Z"],
+	  ["TOPLAP Sheffield", 'Performances + some chat from Sheffield live coders',"2021-02-21T17:00Z", "2021-02-21T20:00Z",
+	   [
+	       ["2021-02-21T17:00Z", "<a href=\"https://heavy-lifting.org\">Heavy Lifting</a>"],
+	       ["2021-02-21T17:30+00:00", "<a href=\"http://annaxambo.me\">Anna Xambo</a>"],
+	       ["2021-02-21T18:00+00:00", "<a href=\"https://g-roma.github.io\">Gerard Roma</a>"],
+	       ["2021-02-21T18:30+00:00", "<a href=\"https://slab.org\">Yaxu</a>"],
+	       ["2021-02-21T19:00+00:00", "<a href=\"https://www.helenpapaioannou.com\">Kar Pouzi</a>"],
+	       ["2021-02-21T19:30+00:00", "<a href=\"https://sleepsang.com/\">Sleepsang</a>"]
+	   ]
+	  ],
 	  ["Algorave Brasil", "", "2021-02-21T20:00Z", "2021-02-21T22:30Z"],
 	  ["Algorave CLIC (colectivo de live coders)/Argentina", "", "2021-02-21T23:00Z", "2021-02-22T01:30Z"],
 	  ["Livecoding CR (Costa Rica)", "", "2021-02-22T01:40Z", "2021-02-22T03:40Z"],
       ];
     var lineup = "<h1>Transnodal livecode stream</h1><div><iframe width=\"414\" height=\"233\" src=\"https://www.youtube-nocookie.com/embed/qJhgD529LF0\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe><p><strong>DE:</strong> Ein langes Wochenende voller Live-Coding Performances, Talks und mehr zum Geburtstag von <a href=\"https://toplap.org/\">TOPLAP</a>. Live-Coding ist, wenn Leute Code schreiben und diesen ausführen um live Musik, Visuals, Tanz, Kunst und anderes zu gestalten.</p><p><strong>EN:</strong> A long weekend of live coding performances + talks + more, for <a href=\"https://toplap.org/\">TOPLAP</a>'s birthday. Live coding is where people write code while it runs to make live music/visuals/dance/art/etc.</p><p><strong>ES:</strong> Un largo fin de semana lleno de live coding, con actos en vivo + charlas + otras cosas, para celebrar el cumpleaños de <a href=\"https://toplap.org/\">TOPLAP</a>. Live coding sucede cuando la gente escribe y manipula código en vivo para hacer música/visuales/danza/arte/etc.</p><p><strong>ITA:</strong> Un lungo weekend di live coding performances, talks e altro per il compleanno di <a href=\"https://toplap.org\">TOPLAP</a>. Live coding è quella pratica dove la gente scrive codice mentre viene eseguito per generare musica/visual/danza/arte/ecc… dal vivo.</p><p><strong>PT-BR:</strong> Um longo fim de semana de live coding: performances + palestras + mais para o aniversário da TOPLAP. Live coding é quando pessoas escrevem código enquanto ele roda para criar música/visuais/dança/arte/etc em tempo real.</p><p><strong>ZH-CN:</strong> 一个漫长的周末，充满现场编码表演、演讲以及TOPLAP生日的更多内容。现场编码是指人们编写和执行代码以创造现场音乐、视觉、舞蹈和艺术等等。</p></div>";
     var last_date = "";
-    for (event of events) {
+    for (let event of events) {
 	var start = DateTime.fromISO(event[2]);
 	var stop = DateTime.fromISO(event[3]);
+	var slots = event[4];
 	var start_date = start.toLocaleString(DateTime.DATE_HUGE);
 	if (start_date != last_date) {
 	    lineup += "<h3>" + start_date + "</h3>";
 	    last_date = start_date;
 	};
-	lineup += "<p>" + start.toLocaleString({hour: 'numeric', minute: 'numeric'}) + " - " + stop.toLocaleString({hour: 'numeric', minute: 'numeric', timeZoneName: 'short'}) + "<br/><b>" + event[0] + "</b><br />" + event[1] + "</p>"
+	lineup += "<p>" + start.toLocaleString({hour: 'numeric', minute: 'numeric'}) + " - " + stop.toLocaleString({hour: 'numeric', minute: 'numeric', timeZoneName: 'short'}) + "<br/><b>" + event[0] + "</b><br />" + event[1]
+	if (slots && slots.length > 0) {
+	    lineup += "<br />"
+	    for (slot of slots) {
+		slottime = DateTime.fromISO(slot[0]);
+		lineup += "> " + slottime.toLocaleString({hour: 'numeric', minute: 'numeric'}) + " " + slot[1] + " "
+	    }
+	}
+	lineup += "</p>";
+	    
     }
     $("#lineup").html(lineup);
 });
     </script>
   </head>
   <body>
-    <div id="lineup" style="width: 414px; float: right;" /></div><img src="X.svg" /><img src="T.svg" /><img src="R.svg" /><img src="A.svg" /><img src="N.svg" /><img src="S.svg" /><img src="X.svg" /><img src="space.svg" /><img src="space.svg" /><img src="X.svg" /><img src="N.svg" /><img src="O.svg" /><img src="D.svg" /><img src="A.svg" /><img src="L.svg" /><img src="space.svg" /><img src="space.svg" /><img src="space.svg" /><img src="space.svg" /><image src="toplap.svg" /><img src="space.svg" /><img src="T.svg" /><img src="O.svg" /><img src="P.svg" /><img src="L.svg" /><img src="A.svg" /><img src="P.svg" /><img src="X.svg" /><img src="space.svg" /><img src="space.svg" /><img src="X.svg" /><img src="1.svg" /><img src="9.svg" /><img src="dash.svg" /><img src="2.svg" /><img src="1.svg" /><img src="space.svg" /><img src="F.svg" /><img src="E.svg" /><img src="B.svg" /><img src="space.svg"><img src="space.svg"><img src="algorave.svg"><img src="eulerroom.svg"><img src="space.svg"><img src="X.svg"><a href="flyers/barcelona.png"><img src="flyers/barcelona.png" class="flyer" /></a><a href="flyers/clic.png"><img src="flyers/clic.png" class="flyer" /><a href="flyers/duesseldorf.png"><img src="flyers/duesseldorf.png" class="flyer" /><a href="flyers/karlsruhe.png"><img src="flyers/karlsruhe.png" class="flyer" /></a><a href="flyers/mexico.jpeg"><img src="flyers/mexico.jpeg" class="flyer" /></a><a href="flyers/netherlands.png"><img src="flyers/netherlands.png" class="flyer" /></a><a href="flyers/sheffield.jpg"><img src="flyers/sheffield.jpg" class="flyer" /></a>
+    <div id="lineup" style="width: 414px; float: right;" /></div><img src="X.svg" /><img src="T.svg" /><img src="R.svg" /><img src="A.svg" /><img src="N.svg" /><img src="S.svg" /><img src="X.svg" /><img src="space.svg" /><img src="space.svg" /><img src="X.svg" /><img src="N.svg" /><img src="O.svg" /><img src="D.svg" /><img src="A.svg" /><img src="L.svg" /><img src="space.svg" /><img src="space.svg" /><img src="space.svg" /><img src="space.svg" /><image src="toplap.svg" /><img src="space.svg" /><img src="T.svg" /><img src="O.svg" /><img src="P.svg" /><img src="L.svg" /><img src="A.svg" /><img src="P.svg" /><img src="X.svg" /><img src="space.svg" /><img src="space.svg" /><img src="X.svg" /><img src="1.svg" /><img src="9.svg" /><img src="dash.svg" /><img src="2.svg" /><img src="1.svg" /><img src="space.svg" /><img src="F.svg" /><img src="E.svg" /><img src="B.svg" /><img src="space.svg"><img src="space.svg"><img src="algorave.svg"><img src="eulerroom.svg"><img src="space.svg"><img src="X.svg"><a href="flyers/barcelona.png"><img src="flyers/barcelona-thumb.png" class="flyer" /></a><a href="flyers/clic.png"><img src="flyers/clic-thumb.png" class="flyer" /><a href="flyers/duesseldorf.png"><img src="flyers/duesseldorf-thumb.png" class="flyer" /><a href="flyers/karlsruhe.png"><img src="flyers/karlsruhe-thumb.png" class="flyer" /></a><a href="flyers/mexico.jpeg"><img src="flyers/mexico.jpeg" class="flyer" /></a><a href="flyers/netherlands.png"><img src="flyers/netherlands-thumb.png" class="flyer" /></a><a href="flyers/sheffield.jpg"><img src="flyers/sheffield-thumb.jpg" class="flyer" /></a>
   </body>
 </html>
